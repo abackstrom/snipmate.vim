@@ -1,7 +1,7 @@
 snippet php
 	<?php
+
 	${1}
-	?>
 snippet ec
 	echo "${1:string}"${2};
 snippet inc
@@ -138,15 +138,15 @@ snippet doc_i
 snippet class
 	/**
 	 * ${1}
-	 **/
+	 */
 	class ${2:ClassName}
 	{
 		${3}
-		function ${4:__construct}(${5:argument})
+		public function ${4:__construct}( ${5:argument} )
 		{
 			${6:// code...}
-		}
-	}
+		}//end $4
+	}//end class $2
 # define(...)
 snippet def
 	define('${1}'${2});${3}
@@ -207,10 +207,24 @@ snippet foreach
 		${3:// code...}
 	}
 snippet fun
-	${1:public }function ${2:FunctionName}(${3})
-	{
+	/**
+	 *
+	 */
+	${1:public }function ${2:FunctionName}(${3}) {
 		${4:// code...}
-	}
+	}//end $2
 # $... = array (...)
 snippet array
 	$${1:arrayName} = array('${2}' => ${3});${4}
+snippet wpph
+	/*
+	Plugin Name: ${1}
+	Plugin URI: ${2}
+	Description: ${3}
+	Version: ${4:0.1}
+	Author: ${5:`g:snips_author`}
+	Author URI: ${6:http://www.plymouth.edu/}
+	License: ${7:GPL2}
+	*/
+snippet firephp
+	PSU::get('firephp')->
